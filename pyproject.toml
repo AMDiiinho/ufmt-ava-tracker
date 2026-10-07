@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ufmt-agent"
+version = "0.1.0"
+description = "Sincronizador de entregas do AVA UFMT para Google Calendar"
+requires-python = ">=3.11"
+dependencies = [
+  "beautifulsoup4>=4.12",
+  "requests>=2.31",
+  "selenium>=4.20",
+  "tzdata>=2024.1",
+]
+
+[project.scripts]
+ufmt-sync = "ufmt_agent.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.setuptools.packages.find]
+include = ["ufmt_agent*"]
